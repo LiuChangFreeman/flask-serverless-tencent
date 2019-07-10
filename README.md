@@ -3,9 +3,11 @@
 
 简单的三步即可将Flask适配到SCF环境中。
 
-# 1、引入serverless.py 
+# 1、在Flask应用中引入serverless.py 
 ```
+from flask import Flask,request,session
 from serverless import create_environ, get_response, wrap_response
+app = Flask(__name__)
 ```
 
 # 2、使用serverless.py创建SCF主函数入口
@@ -23,5 +25,4 @@ path_reserved="/sample_path"
 #api网关触发器中访问路径自带的前缀
 ```
 
-以上为此示例的修改方法:
-https://service-*******.ap-shanghai.apigateway.myqcloud.com/release/`sample_path`
+以上为此示例访问路径的修改方法:...apigateway.myqcloud.com/release/`sample_path`
