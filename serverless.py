@@ -51,6 +51,6 @@ def wrap_response(response):
         "isBase64Encoded": False,
         "statusCode": response.status_code,
         "headers": headers,
-        "body": response.data.decode("utf-8")
+        "body": response.data
     }
     return wrapped_response
